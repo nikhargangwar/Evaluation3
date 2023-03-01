@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './AllEvents.css';
+import PropTypes from 'prop-types';
 import Card from '../Card';
 
 function AllEvents({ allEventsData }) {
@@ -13,4 +14,7 @@ function AllEvents({ allEventsData }) {
   );
 }
 
+AllSongs.propTypes = {
+  allSongsData: PropTypes.object,
+};
 export default AllEvents;
