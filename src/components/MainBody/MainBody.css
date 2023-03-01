@@ -1,0 +1,10 @@
+.main-body{
+    
+}
+.main-body-container{
+    border: 1px solid black;
+    width: 70%;
+    margin:0 auto;
+    margin-top: 0px;
+    min-height: 100vh;
+}
