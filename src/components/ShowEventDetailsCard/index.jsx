@@ -26,6 +26,21 @@ function ShowEventDetailsCard({ eventData }) {
       setIsBookmark(!isBookmark);
     }
   };
+
+  function onRegisterHandler() {
+    if (isRegistered) {
+      makeRequest(UPDATE_BOOKMARK(eventData.id), {
+        data: { isRegistered: false },
+      });
+      setIsRegistered(!isRegistered);
+    } else {
+      makeRequest(UPDATE_BOOKMARK(eventData.id), {
+        data: { isRegistered: true },
+      });
+      setIsRegistered(!isRegistered);
+    }
+  }
+
   return (
     <div className="ShowEventDetailsCard">
       <div className="detailCard">
@@ -66,6 +81,17 @@ function ShowEventDetailsCard({ eventData }) {
             {/* <i className="fa-solid fa-user" /> */}
             {/* <img className="bookmark-icon" src={Bookmark} alt="" />{' '} */}
             {/* {eventData.isBookmarked} */}
+          </div>
+          <div className="register-button">
+            {isRegistered ? (
+              <button type="button" onClick={onRegisterHandler}>
+                Unregister
+              </button>
+            ) : (
+              <button type="button" onClick={onRegisterHandler}>
+                Register
+              </button>
+            )}
           </div>
         </div>
       </div>
