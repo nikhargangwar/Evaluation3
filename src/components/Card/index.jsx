@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { UPDATE_BOOKMARK } from '../../constants/apiEndPoints';
@@ -77,5 +79,20 @@ function Card({ eventData }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  eventData: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    venue: PropTypes.string.isRequired,
+    datetime: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string.isRequired,
+    isBookmarked: PropTypes.bool.isRequired,
+    isRegistered: PropTypes.bool.isRequired,
+    areSeatsAvailable: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 
 export default Card;

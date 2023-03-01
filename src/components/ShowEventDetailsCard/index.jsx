@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { getFormattedDateFromUtcDate } from '../../utils/common';
 import makeRequest from '../../utils/makeRequest';
 import { UPDATE_BOOKMARK } from '../../constants/apiEndPoints';
@@ -71,5 +72,18 @@ function ShowEventDetailsCard({ eventData }) {
     </div>
   );
 }
+ShowEventDetailsCard.propTypes = {
+  eventData: PropTypes.shape({
+    id: PropTypes.number.isRequired,
 
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    venue: PropTypes.string.isRequired,
+    datetime: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string.isRequired,
+    isBookmarked: PropTypes.bool.isRequired,
+    isRegistered: PropTypes.bool.isRequired,
+    areSeatsAvailable: PropTypes.bool.isRequired,
+  }).isRequired,
+};
 export default ShowEventDetailsCard;
