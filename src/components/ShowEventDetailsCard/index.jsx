@@ -27,7 +27,7 @@ function ShowEventDetailsCard({ eventData }) {
   };
   return (
     <div className="ShowEventDetailsCard">
-      <div className="card">
+      <div className="detailCard">
         <div className="card-img">
           <img src={eventData.imgUrl} alt="" />
         </div>
